@@ -7,9 +7,9 @@ import javax.swing.JOptionPane;
 public class PrincipalImc2 {
     public static void main(String[] args) {
         ArrayList<Pessoa> pessoas = new ArrayList<Pessoa>();
-        String menu = "1 - Cadastras\n"
-                    + "2 - Listar\n"
-                    + "3 - Sair\n";
+        String menu = "1 - Cadastrar.\n"
+                    + "2 - Listar.\n"
+                    + "3 - Sair!\n";
         int op = 0;
 
         do {
