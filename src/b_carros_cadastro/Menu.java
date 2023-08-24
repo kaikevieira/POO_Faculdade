@@ -23,20 +23,39 @@ public class Menu {
                 carros.add(c);
             } 
             else if (i == 2){
-                String result = "Carros cadastrados: \n\n";
+                String result = "Carros cadastrados: \n";
                 for (Carro c: carros) {
                     result += c.exibirDados();
                 } JOptionPane.showMessageDialog(null,result);
             }
             else if (i == 3){
-                String result = "Carros cadastrados: \n\n";
-                String carroCor = JOptionPane.showInputDialog("Qual a cor que deseja buscar?");
+                String result = "Carros cadastrados: \n";
+                String carroCor = JOptionPane.showInputDialog("Qual a cor que deseja buscar?").toUpperCase();
                 for (Carro c: carros) {
-                    if (c.cor.equals(carroCor)) {
+                    if (c.cor.equals(carroCor.toUpperCase())) {
                         result += c.exibirDados();
-                    } JOptionPane.showMessageDialog(null,result);
-                }
+                    } 
+                } JOptionPane.showMessageDialog(null,result);
             }
+            else if (i == 4){
+                String result = "Carros cadastrados: \n";
+                int dataInicial = Integer.parseInt(JOptionPane.showInputDialog("Qual o ano inicial?"));
+                int dataFinal = Integer.parseInt(JOptionPane.showInputDialog("Qual o ano final"));
+                for (Carro c: carros) {
+                    if (c.anoFabricacao >= dataInicial && c.anoFabricacao <= dataFinal) {
+                        result += c.exibirDados();
+                    } 
+                }JOptionPane.showMessageDialog(null,result);
+            }
+            else if (i == 5){
+                String result = "Carros cadastrados: \n";
+                String marca= JOptionPane.showInputDialog("Qual a marca que deseja buscar?").toUpperCase();
+                for (Carro c: carros) {
+                    if (c.marca.equals(marca.toUpperCase())) {
+                        result += c.exibirDados();
+                    } 
+                } JOptionPane.showMessageDialog(null,result);
+            } 
         }while (i != 6);
     }
 }
